@@ -4,7 +4,6 @@
 
 To implement the **Q-Learning control algorithm** using the Gymnasium `FrozenLake-v1` environment and learn an optimal action-value function that enables the agent to select suitable actions for reaching the goal state while avoiding holes.
 
----
 
 ## Problem Statement
 
@@ -16,15 +15,19 @@ Programming Language
 Python 3
 Libraries
 The following Python libraries are required:
+
 ```
 gymnasium
 numpy
 matplotlib
 ```
+
 Install the required packages using:
+
 ```
 pip install gymnasium numpy matplotlib
 ```
+
 
 ## Environment Description
 FrozenLake-v1 is an 8 × 8 grid-world environment with 64 states.
@@ -88,50 +91,22 @@ $$
 ---
 
 ## Algorithm
-```
-Q-Learning Algorithm
-Create the FrozenLake-v1 environment.
-
-Determine the number of states and actions.
-
-Initialize the Q-table with zeros.
-
-Set the learning rate α.
-
-Set the discount factor γ.
-
-Initialize the exploration rate ε.
-
-Repeat for the specified number of episodes
-
-Reset the environment.
-Obtain the initial state.
-Select an action using the epsilon-greedy strategy.
-Execute the action.
-Observe the reward and next state.
-Calculate the Q-Learning target.
-Update the Q-value.
-Move to the next state.
-Continue until the episode terminates.
-Store the total reward.
-Reduce epsilon.
-Calculate the state-value function from the Q-table.
-
-Extract the greedy policy from the Q-table.
-
-Display the final Q-table.
-
-Display the estimated state-value function.
-
-Display the learned policy.
-
-Calculate the average reward over the last 1000 episodes.
-
-Plot the learning curve.
-
-Close the environment.
-
-```
+1. Create the FrozenLake-v1 environment.
+2. Determine the number of states and actions.
+3. Initialize the Q-table with zeros.
+4. Set learning rate (α), discount factor (γ), and exploration rate (ε).
+5. Repeat for the specified number of episodes:
+   - Reset the environment.
+   - Select an action using epsilon-greedy strategy.
+   - Execute the action and observe reward and next state.
+   - Update the Q-value using the Q-Learning formula.
+   - Continue until the episode terminates.
+   - Store the total reward and reduce epsilon.
+6. Calculate the state-value function and greedy policy.
+7. Display the Q-table, state-value function, and learned policy.
+8. Calculate the average reward over the last 1000 episodes.
+9. Plot the learning curve.
+10. Close the environment.
 
 
 ## Python Program
@@ -141,9 +116,6 @@ Close the environment.
 # -------------------------------------------------
 # Q-Learning Training
 # -------------------------------------------------
-# ---------------------------
-# Q -Learning Training
-# -----------------------------
 
 for episode in range(num_episodes):
     state, info = env.reset()
@@ -172,7 +144,7 @@ for episode in range(num_episodes):
     epsilon = max(epsilon_min, epsilon * epsilon_decay)
 
 ```
----
+
 
 ## Output
 
@@ -191,8 +163,9 @@ for episode in range(num_episodes):
 
 
 ## Result
-The Q-Learning algorithm was successfully implemented in FrozenLake-v1, learning Q-values through repeated interaction using Q-table updates and an epsilon-greedy strategy. The learned Q-table produced the state-value function and greedy policy, while the learning curve and final average reward were used to evaluate performance.
----
+
+Thus, the Q-Learning algorithm was successfully implemented using the FrozenLake-v1 environment with an 8 × 8 grid. The agent learned a policy through repeated interactions, and the final Q-table, state-value function, learned policy, learning curve, and average reward were obtained.
+
 
 ## Inference
 
